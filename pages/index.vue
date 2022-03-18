@@ -1,6 +1,8 @@
 <template>
   <div id="max">
+    <nuxt-link to="/about">首页</nuxt-link>
   </div>
+  
 </template>
 
 <script>

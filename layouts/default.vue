@@ -1,6 +1,6 @@
 <template>
   <div>
-    <navBar />
+    <navBar testcontent="fuck"/>
     <Nuxt />
   </div>
 </template>

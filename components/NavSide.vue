@@ -51,7 +51,7 @@
           </el-menu>
         </el-aside>
         <!--主提-->
-        <el-main>{{ showtext }}</el-main>
+        <el-main>  </el-main>
       </el-container>
       <!--脚部-->
       <el-footer>footer</el-footer>
@@ -60,9 +60,7 @@
 </template>
 <script>
 export default {
-  props :{
-    testcontent 
-  },
+  props: [],
   data() {
     return {
       disabled: false,
