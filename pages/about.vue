@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  layout: 'log',
   name: 'AboutPage',
 }
 </script>

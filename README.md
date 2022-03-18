@@ -1,4 +1,4 @@
-# 测试项目
+# 测试项目（暂时关闭Eslint）
 
 ## Build Setup
 
