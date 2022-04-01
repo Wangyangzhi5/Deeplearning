@@ -50,8 +50,8 @@
             </el-submenu>
           </el-menu>
         </el-aside>
-        <!--主提-->
-        <el-main>  </el-main>
+        <!--主体-->
+        <el-main> {{ foobar }} </el-main>
       </el-container>
       <!--脚部-->
       <el-footer>footer</el-footer>
@@ -60,7 +60,7 @@
 </template>
 <script>
 export default {
-  props: [],
+  props: ['foobar'],
   data() {
     return {
       disabled: false,
@@ -75,6 +75,21 @@ export default {
   methods: {
     jump(item1) {
       this.showtext = item1
+      console.log(item1)
+      switch (item1) {
+        case '考勤详情':
+          this.$router.push('/')
+          break
+        case '考勤汇总':
+          this.$router.push('/about')
+          break
+        case '合同详情':
+          this.$router.push('/help')
+          break
+        case '合同汇总':
+          this.$router.push('/more')
+          break
+      }
     },
   },
 }
@@ -122,6 +137,7 @@ html,
   color: #333;
   text-align: center;
   line-height: 200px;
+  // height: 900px;
 }
 
 .el-main {
