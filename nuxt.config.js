@@ -10,7 +10,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
-      { hid: 'keywords', name: 'keywords', content: 'js技术,vuejs,web前端' },
+      { hid: 'keywords', name: 'keywords', content: 'vuejs,web前端' },
       // { name: 'referrer', content: 'no-referrer-when-downgrade' }, // 解决其他开启网站防盗链功能,全局会导致百度统计失效
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -30,6 +30,13 @@ export default {
     // https://go.nuxtjs.dev/eslint
     // '@nuxtjs/eslint-module',
   ],
+  // 代理转发 
+  // proxy: { 
+  //   '/dev-api': {
+  //     target: '目标网址',
+  //     pathRewrite: {'^/dev-api': ''}
+  //   }
+  // },
   server: {
     port: 3001,
     host: '0.0.0.0', // 默认为当前ip
@@ -40,8 +47,11 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/toast',
     'cookie-universal-nuxt',
+    // '@/plugins/route',
   ],
-
+  router: {
+    middleware: ['redirect'],
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308

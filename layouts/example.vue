@@ -11,9 +11,9 @@
 <script>
 export default {
   components: {
-    commonFooter: () => import("../components/common/homeFooter.vue"),
-    HomeHeader: () => import("../components/common/homeHeader.vue"),
-    siderBar: () => import("../components/sideBar/sideBar.vue"),
+    commonFooter: () => import("../components/homeFooter.vue"),
+    HomeHeader: () => import("../components/homeHeader.vue"),
+    siderBar: () => import("../components/sideBar.vue"),
   },
 };
 </script>

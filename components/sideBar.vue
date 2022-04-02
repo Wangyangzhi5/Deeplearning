@@ -73,11 +73,11 @@
   </div>
 </template>
 <script>
-import {
-  getRecomListApi2,
-  getCateApi2,
-  getTagsApi2,
-} from "../../pages/post/index";
+// import {
+//   getRecomListApi2,
+//   getCateApi2,
+//   getTagsApi2,
+// } from "../../pages/post/index";
 export default {
   props: {},
   data() {
@@ -90,74 +90,74 @@ export default {
     };
   },
   computed: {},
-  methods: {
-    async getRecomList(type) {
-      let res = await getRecomListApi2({ type });
-      if (res) {
-        this.recommandList = res.data;
-      }
-    },
-    handleClick(tab, event) {
-      this.getRecomList(tab.name);
-    },
-    search() {
-      if (!this.searchWords) {
-        this.$message.warning("请输入关键字");
-        return;
-      }
-      window.open("/post/tags/" + this.searchWords);
-    },
-    randomRgbColor() {
-      // 随机生成RGB颜色
-      let colorList = ["#409eff", "#67c23a", "#909399", "#e6a23c", "#f56c6c"];
-      //随机生成5种颜色中的其中一种
-      let max = 4;
-      let min = 0;
-      return colorList[Math.floor(Math.random() * (max - min + 1) + min)];
-    },
-    async getCate() {
-      let res = await getCateApi2({});
-      if (res) {
-        this.cateList = res.data.result;
-      }
-    },
-    async getTags() {
-      let res = await getTagsApi2({});
-      if (res) {
-        this.tagsList = res.data.result;
-      }
-    },
-  },
-  mounted() {
-    // 判断是否在服务端
-    if (process.client) {
-      // 在浏览器端调接口，需要服务端做反向代理
-      // 查推荐
-      this.getRecomList("all");
-      // 查分类
-      this.getCate();
-      // 查标签
-      this.getTags();
-    }
-    // side 1
-    (window.slotbydup = window.slotbydup || []).push({
-      id: "u6324348",
-      container: "_oi1z2s14bx",
-      async: true,
-    });
-    // side 2
-    (window.slotbydup = window.slotbydup || []).push({
-      id: "u6324827",
-      container: "_clzacg58dkb",
-      async: true,
-    });
-    // 监听键盘enter键，回车就执行搜索
-    window.addEventListener("keypress", (key) => {
-      if (key.code === "Enter") {
-        this.search();
-      }
-    });
-  },
+  // methods: {
+  //   async getRecomList(type) {
+  //     let res = await getRecomListApi2({ type });
+  //     if (res) {
+  //       this.recommandList = res.data;
+  //     }
+  //   },
+  //   handleClick(tab, event) {
+  //     this.getRecomList(tab.name);
+  //   },
+  //   search() {
+  //     if (!this.searchWords) {
+  //       this.$message.warning("请输入关键字");
+  //       return;
+  //     }
+  //     window.open("/post/tags/" + this.searchWords);
+  //   },
+  //   randomRgbColor() {
+  //     // 随机生成RGB颜色
+  //     let colorList = ["#409eff", "#67c23a", "#909399", "#e6a23c", "#f56c6c"];
+  //     //随机生成5种颜色中的其中一种
+  //     let max = 4;
+  //     let min = 0;
+  //     return colorList[Math.floor(Math.random() * (max - min + 1) + min)];
+  //   },
+  //   async getCate() {
+  //     let res = await getCateApi2({});
+  //     if (res) {
+  //       this.cateList = res.data.result;
+  //     }
+  //   },
+  //   async getTags() {
+  //     let res = await getTagsApi2({});
+  //     if (res) {
+  //       this.tagsList = res.data.result;
+  //     }
+  //   },
+  // },
+  // mounted() {
+  //   // 判断是否在服务端
+  //   if (process.client) {
+  //     // 在浏览器端调接口，需要服务端做反向代理
+  //     // 查推荐
+  //     this.getRecomList("all");
+  //     // 查分类
+  //     this.getCate();
+  //     // 查标签
+  //     this.getTags();
+  //   }
+  //   // side 1
+  //   (window.slotbydup = window.slotbydup || []).push({
+  //     id: "u6324348",
+  //     container: "_oi1z2s14bx",
+  //     async: true,
+  //   });
+  //   // side 2
+  //   (window.slotbydup = window.slotbydup || []).push({
+  //     id: "u6324827",
+  //     container: "_clzacg58dkb",
+  //     async: true,
+  //   });
+  //   // 监听键盘enter键，回车就执行搜索
+  //   window.addEventListener("keypress", (key) => {
+  //     if (key.code === "Enter") {
+  //       this.search();
+  //     }
+  //   });
+  // },
 };
 </script>
 

@@ -36,51 +36,51 @@
   </div>
 </template>
 <script>
-import { insertCommentApi, getCommentApi } from "../../pages/post/index";
+// import { insertCommentApi, getCommentApi } from "../../pages/post/index";
 export default {
   data() {
     return {
       form: {
         content: "",
         username: "",
-        postId: this.$router.app.context.params.id, // 获取当前文章id
+        // postId: this.$router.app.context.params.id, // 获取当前文章id
       },
       commentsList: [],
     };
   },
   mounted() {
     if (process.client) {
-      this.getComments();
+      // this.getComments();
     }
   },
   methods: {
-    async getComments() {
-      let res = await getCommentApi({
-        id: this.$router.app.context.params.id || "",
-      });
-      if (res) {
-        this.commentsList = res.data.result || [];
-      }
-    },
-    async submit() {
-      if (!this.form.username) {
-        this.$message.warning("请输入用户名");
-        return;
-      }
-      if (!this.form.content) {
-        this.$message.warning("请输入内容");
-        return;
-      }
-      this.$nextTick(() => {
-        this.$nuxt.$loading.start();
-      });
-      const res = await insertCommentApi(this.form);
-      if (res) {
-        this.$message.success("提交成功");
-        this.getComments(this.postId);
-        this.$nuxt.$loading.finish();
-      }
-    },
+    // async getComments() {
+    //   let res = await getCommentApi({
+    //     id: this.$router.app.context.params.id || "",
+    //   });
+    //   if (res) {
+    //     this.commentsList = res.data.result || [];
+    //   }
+    // },
+    // async submit() {
+    //   if (!this.form.username) {
+    //     this.$message.warning("请输入用户名");
+    //     return;
+    //   }
+    //   if (!this.form.content) {
+    //     this.$message.warning("请输入内容");
+    //     return;
+    //   }
+    //   this.$nextTick(() => {
+    //     this.$nuxt.$loading.start();
+    //   });
+    //   const res = await insertCommentApi(this.form);
+    //   if (res) {
+    //     this.$message.success("提交成功");
+    //     this.getComments(this.postId);
+    //     this.$nuxt.$loading.finish();
+    //   }
+    // },
   },
 };
 </script>
@@ -120,7 +120,7 @@ export default {
         display: inline-block;
         width: 36px;
         height: 36px;
-        background: url("@/assets/img/avatar.png") no-repeat;
+        // background: url("@/assets/img/avatar.png") no-repeat;
         background-size: contain;
       }
     }
